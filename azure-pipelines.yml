@@ -19,8 +19,8 @@ steps:
     uploadToSSC: true
     applicationName: '$(SSC_PROJECTNAME)'
     applicationVersion: '$(SSC_PROJECTVERSION)'
-    buildTool: 'none'
-    buildFile: 'csharp.sln'
+    buildTool: 'msbuild'
+    buildFile: 'Sample1.sln'
     block: true
     outputFile: 'csharp.fpr'
     logFile: 'charp.log'
