@@ -27,3 +27,6 @@ steps:
     logFile: 'charp.log'
     overwrite: true
 
+- task: CmdLine@2
+  inputs:
+    script: 'java -jar C:\fortifytask\fortifytask.jar --sscApplicationUrl=%SSC_URL% --sscAuthToken=%SSC_AUTHTOKEN% --projectName=%SSC_PROJECTNAME% --projectVersionName=%SSC_PROJECTVERSION% --newProject=true --maxSeverityCountLow=0 --maxSeverityCountMedium=0 --maxSeverityCountHigh=0 --maxSeverityCountCritical=0'
