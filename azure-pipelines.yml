@@ -10,11 +10,20 @@ pool:
   name: VM-AWS
 
 steps:
+- task: FortifyScanCentralSAST@7
+  inputs:
+    scanCentralCtrlUrl: '$(ScanCentralURL)'
+    scanCentralClientToken: '$(ScanCentral.ClientToken)'
+    sscUrl: '$(ScanCentral.ClientToken)'
+    sscCiToken: '$(ScanCentral.SscCiToken)'
+    uploadToSSC: true
+    applicationName: '$(SSC_PROJECTNAME)'
+    applicationVersion: '$(SSC_PROJECTVERSION)'
+    buildTool: 'msbuild'
+    buildCommand: 'rebuild'
+    buildFile: 'csharp.sln'
+    block: true
+    outputFile: 'csharp.fpr'
+    logFile: 'charp.log'
+    overwrite: true
 
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
