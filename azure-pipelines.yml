@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: VM-AWS
+  name: VM-BSB
 
 steps:
 - task: FortifyScanCentralSAST@7
